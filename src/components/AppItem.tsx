@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet, Image, View } from "react-native";
 import { InstalledApp } from "../types";
+import { wp, hp, fp } from "../utils";
 
 type AppItemProps = {
   app: InstalledApp;
@@ -36,17 +37,17 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: hp(12),
+    paddingHorizontal: wp(24),
   },
   icon: {
-    width: 40,
-    height: 40,
-    marginRight: 16,
-    borderRadius: 8,
+    width: wp(40),
+    height: wp(40),
+    marginRight: wp(16),
+    borderRadius: wp(8),
   },
   label: {
-    fontSize: 24,
+    fontSize: fp(24),
     color: "#FFFFFF",
     fontWeight: "300",
   },

@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { wp } from "../utils";
 
 type NotificationBadgeProps = {
   count: number;
@@ -14,13 +15,13 @@ export const NotificationBadge = ({ count }: NotificationBadgeProps) => {
 const styles = StyleSheet.create({
   dot: {
     position: "absolute",
-    bottom: 2,
-    right: 2,
-    width: 8,
-    height: 8,
-    borderRadius: 4,
+    bottom: wp(2),
+    right: wp(2),
+    width: wp(8),
+    height: wp(8),
+    borderRadius: wp(4),
     backgroundColor: "#FF3B30",
-    borderWidth: 1,
+    borderWidth: wp(1),
     borderColor: "#000000",
   },
 });

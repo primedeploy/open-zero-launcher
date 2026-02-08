@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useClock, useWeather } from "../controllers";
+import { wp, hp, fp } from "../utils";
 
 export const Clock = () => {
   const { formattedTime, formattedPeriod, formattedDate } = useClock();
@@ -25,7 +26,7 @@ export const Clock = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "flex-start",
-    paddingHorizontal: 24,
+    paddingHorizontal: wp(24),
   },
   timeRow: {
     flexDirection: "row",
@@ -36,29 +37,29 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   time: {
-    fontSize: 64,
+    fontSize: fp(64),
     fontWeight: "300",
     color: "#FFFFFF",
-    letterSpacing: -2,
+    letterSpacing: wp(-2),
   },
   period: {
-    fontSize: 20,
+    fontSize: fp(20),
     fontWeight: "300",
     color: "#FFFFFF",
-    marginLeft: 8,
-    marginBottom: 10,
+    marginLeft: wp(8),
+    marginBottom: hp(10),
   },
   temperature: {
-    fontSize: 32,
+    fontSize: fp(32),
     fontWeight: "300",
     color: "#FFFFFF",
-    marginLeft: 16,
-    marginBottom: 6,
+    marginLeft: wp(16),
+    marginBottom: hp(6),
   },
   date: {
-    fontSize: 18,
+    fontSize: fp(18),
     color: "#FFFFFF",
     fontWeight: "400",
-    marginTop: 4,
+    marginTop: hp(4),
   },
 });

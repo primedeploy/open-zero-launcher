@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { AppShortcut } from "../types";
+import { wp, hp, fp } from "../utils";
 
 type ContextMenuOption = {
   label: string;
@@ -73,7 +74,7 @@ export const AppContextMenu = ({
                         ) : (
                           <Ionicons
                             name="arrow-forward-circle-outline"
-                            size={20}
+                            size={fp(20)}
                             color="#FFFFFF"
                           />
                         )}
@@ -96,7 +97,7 @@ export const AppContextMenu = ({
                   >
                     <Ionicons
                       name={option.icon}
-                      size={20}
+                      size={fp(20)}
                       color={option.destructive ? "#FF4444" : "#FFFFFF"}
                     />
                     <Text
@@ -127,44 +128,44 @@ const styles = StyleSheet.create({
   },
   menuContainer: {
     backgroundColor: "#1A1A1A",
-    borderRadius: 12,
-    minWidth: 220,
-    maxWidth: 300,
+    borderRadius: wp(12),
+    minWidth: wp(220),
+    maxWidth: wp(300),
     maxHeight: "70%",
-    paddingVertical: 8,
+    paddingVertical: hp(8),
   },
   scrollContainer: {
     flexGrow: 0,
   },
   appName: {
-    fontSize: 16,
+    fontSize: fp(16),
     fontWeight: "600",
     color: "#FFFFFF",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(12),
   },
   divider: {
-    height: 1,
+    height: hp(1),
     backgroundColor: "#333333",
   },
   menuItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 14,
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(14),
   },
   menuText: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#FFFFFF",
-    marginLeft: 12,
+    marginLeft: wp(12),
     flex: 1,
   },
   destructiveText: {
     color: "#FF4444",
   },
   shortcutIcon: {
-    width: 20,
-    height: 20,
-    borderRadius: 4,
+    width: wp(20),
+    height: wp(20),
+    borderRadius: wp(4),
   },
 });

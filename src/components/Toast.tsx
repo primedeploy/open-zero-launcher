@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { wp, hp, fp } from "../utils";
 
 type ToastProps = {
   message: string;
@@ -35,18 +36,18 @@ export const Toast = ({
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
-    bottom: 100,
-    left: 24,
-    right: 24,
+    bottom: hp(100),
+    left: wp(24),
+    right: wp(24),
     backgroundColor: "#333333",
-    borderRadius: 8,
-    paddingVertical: 14,
-    paddingHorizontal: 20,
+    borderRadius: wp(8),
+    paddingVertical: hp(14),
+    paddingHorizontal: wp(20),
     alignItems: "center",
   },
   message: {
     color: "#FFFFFF",
-    fontSize: 14,
+    fontSize: fp(14),
     textAlign: "center",
   },
 });

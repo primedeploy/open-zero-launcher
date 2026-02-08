@@ -16,6 +16,7 @@ import { AppContextMenu } from "./AppContextMenu";
 import { Toast } from "./Toast";
 import { NotificationBadge } from "./NotificationBadge";
 import { getAppShortcuts, launchShortcut } from "../services";
+import { wp, hp, fp } from "../utils";
 
 type AppListProps = {
   apps: InstalledApp[];
@@ -266,7 +267,7 @@ export const AppList = ({
             <View style={styles.featureIconContainer}>
               <Ionicons
                 name={item.featureIcon || "settings-outline"}
-                size={24}
+                size={fp(24)}
                 color="#FFFFFF"
               />
             </View>
@@ -320,14 +321,15 @@ export const AppList = ({
   }, []);
 
   function getItemLayout(_: unknown, index: number) {
-    return { length: 56, offset: 56 * index, index };
+    const itemHeight = hp(56);
+    return { length: itemHeight, offset: itemHeight * index, index };
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
         <TouchableOpacity onPress={onBack} style={styles.backButton}>
-          <Ionicons name="chevron-back" size={28} color="#FFFFFF" />
+          <Ionicons name="chevron-back" size={fp(28)} color="#FFFFFF" />
         </TouchableOpacity>
         <View style={styles.searchContainer}>
           <TextInput
@@ -398,29 +400,29 @@ const styles = StyleSheet.create({
   topBar: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 8,
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingHorizontal: wp(8),
+    paddingTop: hp(8),
+    paddingBottom: hp(8),
   },
   backButton: {
-    padding: 8,
+    padding: wp(8),
   },
   searchContainer: {
     flex: 1,
-    marginLeft: 4,
-    marginRight: 16,
+    marginLeft: wp(4),
+    marginRight: wp(16),
   },
   searchInput: {
     backgroundColor: "#1A1A1A",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    fontSize: 16,
+    borderRadius: wp(8),
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(12),
+    fontSize: fp(16),
     color: "#FFFFFF",
   },
   searchInputFocused: {
     borderColor: "#ccc",
-    borderWidth: 1,
+    borderWidth: wp(1),
   },
   contentContainer: {
     flex: 1,
@@ -430,11 +432,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    paddingBottom: 40,
+    paddingBottom: hp(40),
   },
   alphabetSidebar: {
-    width: 32,
-    marginRight: 8,
+    width: wp(32),
+    marginRight: wp(8),
     justifyContent: "center",
   },
   alphabetContent: {
@@ -443,21 +445,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   letterButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 6,
+    paddingVertical: hp(6),
+    paddingHorizontal: wp(6),
   },
   letterText: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#666666",
     fontWeight: "600",
   },
   headerContainer: {
-    paddingHorizontal: 24,
-    paddingTop: 24,
-    paddingBottom: 8,
+    paddingHorizontal: wp(24),
+    paddingTop: hp(24),
+    paddingBottom: hp(8),
   },
   headerText: {
-    fontSize: 14,
+    fontSize: fp(14),
     color: "#666666",
     fontWeight: "600",
     textTransform: "uppercase",
@@ -465,29 +467,29 @@ const styles = StyleSheet.create({
   appItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: hp(12),
+    paddingHorizontal: wp(24),
   },
   iconContainer: {
     position: "relative",
-    marginRight: 16,
+    marginRight: wp(16),
   },
   featureIconContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
+    width: wp(40),
+    height: wp(40),
+    borderRadius: wp(8),
     backgroundColor: "#1A1A1A",
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 16,
+    marginRight: wp(16),
   },
   appIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
+    width: wp(40),
+    height: wp(40),
+    borderRadius: wp(8),
   },
   appLabel: {
-    fontSize: 24,
+    fontSize: fp(24),
     color: "#FFFFFF",
     fontWeight: "300",
   },

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { verifyAppLockPassword } from "../services";
+import { wp, hp, fp } from "../utils";
 
 type UnlockModalProps = {
   visible: boolean;
@@ -70,7 +71,7 @@ export const UnlockModal = ({
       <View style={styles.overlay}>
         <View style={styles.container}>
           <View style={styles.header}>
-            <Ionicons name="lock-closed" size={32} color="#FFFFFF" />
+            <Ionicons name="lock-closed" size={fp(32)} color="#FFFFFF" />
             <Text style={styles.title}>App Locked</Text>
           </View>
 
@@ -138,93 +139,93 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.9)",
     justifyContent: "center",
     alignItems: "center",
-    padding: 24,
+    padding: wp(24),
   },
   container: {
     backgroundColor: "#1A1A1A",
-    borderRadius: 16,
-    padding: 24,
+    borderRadius: wp(16),
+    padding: wp(24),
     width: "100%",
-    maxWidth: 320,
+    maxWidth: wp(320),
   },
   header: {
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: hp(20),
   },
   title: {
-    fontSize: 20,
+    fontSize: fp(20),
     fontWeight: "600",
     color: "#FFFFFF",
-    marginTop: 12,
+    marginTop: hp(12),
   },
   appInfo: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#000000",
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 20,
+    borderRadius: wp(8),
+    padding: wp(12),
+    marginBottom: hp(20),
   },
   appIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
-    marginRight: 12,
+    width: wp(40),
+    height: wp(40),
+    borderRadius: wp(8),
+    marginRight: wp(12),
   },
   appName: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#FFFFFF",
     flex: 1,
   },
   label: {
-    fontSize: 14,
+    fontSize: fp(14),
     color: "#888888",
-    marginBottom: 8,
+    marginBottom: hp(8),
   },
   input: {
     backgroundColor: "#000000",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
-    fontSize: 16,
+    borderRadius: wp(8),
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(14),
+    fontSize: fp(16),
     color: "#FFFFFF",
-    marginBottom: 8,
+    marginBottom: hp(8),
   },
   inputFocused: {
     borderColor: "#ccc",
-    borderWidth: 1,
+    borderWidth: wp(1),
   },
   errorText: {
-    fontSize: 14,
+    fontSize: fp(14),
     color: "#FF4444",
-    marginBottom: 8,
+    marginBottom: hp(8),
   },
   buttons: {
     flexDirection: "row",
-    marginTop: 16,
-    gap: 12,
+    marginTop: hp(16),
+    gap: wp(12),
   },
   cancelButton: {
     flex: 1,
     backgroundColor: "#333333",
-    borderRadius: 8,
-    paddingVertical: 14,
+    borderRadius: wp(8),
+    paddingVertical: hp(14),
     alignItems: "center",
   },
   cancelButtonText: {
-    fontSize: 16,
+    fontSize: fp(16),
     fontWeight: "600",
     color: "#FFFFFF",
   },
   unlockButton: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 14,
+    borderRadius: wp(8),
+    paddingVertical: hp(14),
     alignItems: "center",
   },
   unlockButtonText: {
-    fontSize: 16,
+    fontSize: fp(16),
     fontWeight: "600",
     color: "#000000",
   },

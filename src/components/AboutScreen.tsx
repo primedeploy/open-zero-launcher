@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
+import { wp, hp, fp } from "../utils";
 
 type AboutScreenProps = {
   onBack: () => void;
@@ -25,7 +26,7 @@ export const AboutScreen = ({ onBack }: AboutScreenProps) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={onBack} style={styles.backButton}>
-          <Ionicons name="chevron-back" size={28} color="#FFFFFF" />
+          <Ionicons name="chevron-back" size={fp(28)} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.title}>About</Text>
       </View>
@@ -45,7 +46,7 @@ export const AboutScreen = ({ onBack }: AboutScreenProps) => {
           onPress={handleOpenWebsite}
           activeOpacity={0.7}
         >
-          <Ionicons name="globe-outline" size={20} color="#FFFFFF" />
+          <Ionicons name="globe-outline" size={fp(20)} color="#FFFFFF" />
           <Text style={styles.linkText}>primedeploy.com</Text>
         </TouchableOpacity>
       </View>
@@ -61,58 +62,58 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    paddingTop: 16,
-    paddingHorizontal: 8,
-    paddingBottom: 8,
+    paddingTop: hp(16),
+    paddingHorizontal: wp(8),
+    paddingBottom: hp(8),
   },
   backButton: {
-    padding: 8,
+    padding: wp(8),
   },
   title: {
-    fontSize: 20,
+    fontSize: fp(20),
     fontWeight: "600",
     color: "#FFFFFF",
-    marginLeft: 8,
+    marginLeft: wp(8),
   },
   content: {
     flex: 1,
-    paddingHorizontal: 24,
-    paddingTop: 40,
+    paddingHorizontal: wp(24),
+    paddingTop: hp(40),
     alignItems: "center",
   },
   appName: {
-    fontSize: 28,
+    fontSize: fp(28),
     fontWeight: "600",
     color: "#FFFFFF",
-    marginBottom: 8,
+    marginBottom: hp(8),
   },
   version: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#666666",
-    marginBottom: 40,
+    marginBottom: hp(40),
   },
   divider: {
-    width: 60,
-    height: 1,
+    width: wp(60),
+    height: hp(1),
     backgroundColor: "#333333",
-    marginBottom: 40,
+    marginBottom: hp(40),
   },
   developedBy: {
-    fontSize: 18,
+    fontSize: fp(18),
     color: "#FFFFFF",
-    marginBottom: 16,
+    marginBottom: hp(16),
   },
   linkButton: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#1A1A1A",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
+    paddingVertical: hp(12),
+    paddingHorizontal: wp(24),
+    borderRadius: wp(8),
   },
   linkText: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#FFFFFF",
-    marginLeft: 8,
+    marginLeft: wp(8),
   },
 });

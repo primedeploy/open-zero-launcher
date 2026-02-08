@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { InstalledApp } from "../types";
+import { wp, hp, fp } from "../utils";
 
 type InitialSetupModalProps = {
   visible: boolean;
@@ -66,7 +67,7 @@ export const InitialSetupModal = ({
       >
         <View style={styles.checkbox}>
           {isSelected && (
-            <Ionicons name="checkmark" size={18} color="#FFFFFF" />
+            <Ionicons name="checkmark" size={fp(18)} color="#FFFFFF" />
           )}
         </View>
         {item.icon && (
@@ -150,69 +151,69 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000",
   },
   header: {
-    paddingTop: 60,
-    paddingHorizontal: 24,
-    paddingBottom: 16,
+    paddingTop: hp(60),
+    paddingHorizontal: wp(24),
+    paddingBottom: hp(16),
   },
   title: {
-    fontSize: 28,
+    fontSize: fp(28),
     fontWeight: "600",
     color: "#FFFFFF",
-    marginBottom: 8,
+    marginBottom: hp(8),
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#666666",
   },
   searchContainer: {
-    paddingHorizontal: 24,
-    paddingBottom: 16,
+    paddingHorizontal: wp(24),
+    paddingBottom: hp(16),
   },
   searchInput: {
     backgroundColor: "#1A1A1A",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    fontSize: 16,
+    borderRadius: wp(8),
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(12),
+    fontSize: fp(16),
     color: "#FFFFFF",
   },
   searchInputFocused: {
     borderColor: "#ccc",
-    borderWidth: 1,
+    borderWidth: wp(1),
   },
   list: {
     flex: 1,
   },
   listContent: {
-    paddingBottom: 20,
+    paddingBottom: hp(20),
   },
   appItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: hp(12),
+    paddingHorizontal: wp(24),
   },
   appItemDisabled: {
     opacity: 0.4,
   },
   checkbox: {
-    width: 24,
-    height: 24,
-    borderRadius: 4,
-    borderWidth: 2,
+    width: wp(24),
+    height: wp(24),
+    borderRadius: wp(4),
+    borderWidth: wp(2),
     borderColor: "#FFFFFF",
-    marginRight: 16,
+    marginRight: wp(16),
     alignItems: "center",
     justifyContent: "center",
   },
   appIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
-    marginRight: 16,
+    width: wp(40),
+    height: wp(40),
+    borderRadius: wp(8),
+    marginRight: wp(16),
   },
   appLabel: {
-    fontSize: 18,
+    fontSize: fp(18),
     color: "#FFFFFF",
     flex: 1,
   },
@@ -220,21 +221,21 @@ const styles = StyleSheet.create({
     color: "#666666",
   },
   footer: {
-    paddingHorizontal: 24,
-    paddingVertical: 24,
-    paddingBottom: 40,
+    paddingHorizontal: wp(24),
+    paddingVertical: hp(24),
+    paddingBottom: hp(40),
   },
   confirmButton: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 16,
+    borderRadius: wp(8),
+    paddingVertical: hp(16),
     alignItems: "center",
   },
   confirmButtonDisabled: {
     backgroundColor: "#333333",
   },
   confirmButtonText: {
-    fontSize: 18,
+    fontSize: fp(18),
     fontWeight: "600",
     color: "#000000",
   },

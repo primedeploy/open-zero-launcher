@@ -4,6 +4,7 @@ import { InstalledApp, AppShortcut } from "../types";
 import { AppContextMenu } from "./AppContextMenu";
 import { NotificationBadge } from "./NotificationBadge";
 import { getAppShortcuts, launchShortcut } from "../services";
+import { wp, hp, fp } from "../utils";
 
 type MostUsedAppsProps = {
   apps: InstalledApp[];
@@ -120,25 +121,25 @@ export const MostUsedApps = ({
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 32,
+    paddingTop: hp(32),
   },
   appItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: hp(12),
+    paddingHorizontal: wp(24),
   },
   iconContainer: {
     position: "relative",
-    marginRight: 16,
+    marginRight: wp(16),
   },
   icon: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
+    width: wp(40),
+    height: wp(40),
+    borderRadius: wp(8),
   },
   label: {
-    fontSize: 24,
+    fontSize: fp(24),
     color: "#FFFFFF",
     fontWeight: "300",
   },

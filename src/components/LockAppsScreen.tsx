@@ -29,6 +29,7 @@ import {
   SYSTEM_LOCKED_PACKAGES,
 } from "../services";
 import { Toast } from "./Toast";
+import { wp, hp, fp } from "../utils";
 
 type LockAppsScreenProps = {
   apps: InstalledApp[];
@@ -188,7 +189,7 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity onPress={onBack} style={styles.backButton}>
-            <Ionicons name="chevron-back" size={28} color="#FFFFFF" />
+            <Ionicons name="chevron-back" size={fp(28)} color="#FFFFFF" />
           </TouchableOpacity>
           <Text style={styles.title}>Lock apps</Text>
         </View>
@@ -207,7 +208,7 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
             onPress={handleCancelPasswordSetup}
             style={styles.backButton}
           >
-            <Ionicons name="chevron-back" size={28} color="#FFFFFF" />
+            <Ionicons name="chevron-back" size={fp(28)} color="#FFFFFF" />
           </TouchableOpacity>
           <Text style={styles.title}>
             {hasPassword ? "Change password" : "Set Password"}
@@ -274,7 +275,7 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={onBack} style={styles.backButton}>
-          <Ionicons name="chevron-back" size={28} color="#FFFFFF" />
+          <Ionicons name="chevron-back" size={fp(28)} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.title}>Lock apps</Text>
       </View>
@@ -285,7 +286,7 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
       >
         <View style={styles.toggleContainer}>
           <View style={styles.toggleInfo}>
-            <Ionicons name="lock-closed" size={24} color="#FFFFFF" />
+            <Ionicons name="lock-closed" size={fp(24)} color="#FFFFFF" />
             <View style={styles.toggleTextContainer}>
               <Text style={styles.toggleTitle}>Enable app lock</Text>
               <Text style={styles.toggleDescription}>
@@ -306,7 +307,7 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
             style={styles.changePasswordButton}
             onPress={handleChangePassword}
           >
-            <Ionicons name="key-outline" size={20} color="#FFFFFF" />
+            <Ionicons name="key-outline" size={fp(20)} color="#FFFFFF" />
             <Text style={styles.changePasswordText}>Change password</Text>
           </TouchableOpacity>
         )}
@@ -363,7 +364,7 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
                   {isLocked && (
                     <Ionicons
                       name="checkmark"
-                      size={18}
+                      size={fp(18)}
                       color={isEnabled ? "#000000" : "#666666"}
                     />
                   )}
@@ -391,16 +392,16 @@ export const LockAppsScreen = ({ apps, onBack }: LockAppsScreenProps) => {
                 {isLocked && (
                   <Ionicons
                     name="lock-closed"
-                    size={18}
+                    size={fp(18)}
                     color={isEnabled ? "#FFFFFF" : "#666666"}
                   />
                 )}
                 {isSystemLocked && isEnabled && (
                   <Ionicons
                     name="alert-circle-outline"
-                    size={16}
+                    size={fp(16)}
                     color="#FF4444"
-                    style={{ marginLeft: 8 }}
+                    style={{ marginLeft: wp(8) }}
                   />
                 )}
               </TouchableOpacity>
@@ -422,29 +423,29 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    paddingTop: 16,
-    paddingHorizontal: 8,
-    paddingBottom: 8,
+    paddingTop: hp(16),
+    paddingHorizontal: wp(8),
+    paddingBottom: hp(8),
   },
   backButton: {
-    padding: 8,
+    padding: wp(8),
   },
   title: {
-    fontSize: 20,
+    fontSize: fp(20),
     fontWeight: "600",
     color: "#FFFFFF",
-    marginLeft: 8,
+    marginLeft: wp(8),
   },
   toggleContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 24,
-    paddingVertical: 16,
+    paddingHorizontal: wp(24),
+    paddingVertical: hp(16),
     backgroundColor: "#1A1A1A",
-    marginHorizontal: 16,
-    marginBottom: 8,
-    borderRadius: 12,
+    marginHorizontal: wp(16),
+    marginBottom: hp(8),
+    borderRadius: wp(12),
   },
   toggleInfo: {
     flexDirection: "row",
@@ -452,75 +453,75 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   toggleTextContainer: {
-    marginLeft: 12,
+    marginLeft: wp(12),
     flex: 1,
   },
   toggleTitle: {
-    fontSize: 16,
+    fontSize: fp(16),
     fontWeight: "600",
     color: "#FFFFFF",
   },
   toggleDescription: {
-    fontSize: 12,
+    fontSize: fp(12),
     color: "#888888",
-    marginTop: 2,
+    marginTop: hp(2),
   },
   changePasswordButton: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    marginHorizontal: 16,
-    marginBottom: 16,
+    paddingHorizontal: wp(24),
+    paddingVertical: hp(12),
+    marginHorizontal: wp(16),
+    marginBottom: hp(16),
     backgroundColor: "#1A1A1A",
-    borderRadius: 8,
+    borderRadius: wp(8),
   },
   changePasswordText: {
-    fontSize: 14,
+    fontSize: fp(14),
     color: "#FFFFFF",
-    marginLeft: 8,
+    marginLeft: wp(8),
   },
   searchContainer: {
-    paddingHorizontal: 16,
-    paddingBottom: 8,
+    paddingHorizontal: wp(16),
+    paddingBottom: hp(8),
   },
   searchInput: {
     backgroundColor: "#1A1A1A",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    fontSize: 16,
+    borderRadius: wp(8),
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(12),
+    fontSize: fp(16),
     color: "#FFFFFF",
   },
   searchInputFocused: {
     borderColor: "#ccc",
-    borderWidth: 1,
+    borderWidth: wp(1),
   },
   sectionTitle: {
-    fontSize: 14,
+    fontSize: fp(14),
     color: "#888888",
-    paddingHorizontal: 24,
-    paddingVertical: 8,
+    paddingHorizontal: wp(24),
+    paddingVertical: hp(8),
   },
   list: {
     flex: 1,
   },
   listContent: {
-    paddingBottom: 40,
+    paddingBottom: hp(40),
   },
   appItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: hp(12),
+    paddingHorizontal: wp(24),
   },
   checkbox: {
-    width: 24,
-    height: 24,
-    borderRadius: 4,
-    borderWidth: 2,
+    width: wp(24),
+    height: wp(24),
+    borderRadius: wp(4),
+    borderWidth: wp(2),
     borderColor: "#FFFFFF",
-    marginRight: 16,
+    marginRight: wp(16),
     alignItems: "center",
     justifyContent: "center",
   },
@@ -536,16 +537,16 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   appIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
-    marginRight: 16,
+    width: wp(40),
+    height: wp(40),
+    borderRadius: wp(8),
+    marginRight: wp(16),
   },
   appIconDisabled: {
     opacity: 0.4,
   },
   appLabel: {
-    fontSize: 18,
+    fontSize: fp(18),
     color: "#FFFFFF",
     flex: 1,
   },
@@ -558,39 +559,39 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   loadingText: {
-    fontSize: 16,
+    fontSize: fp(16),
     color: "#666666",
   },
   passwordContainer: {
-    padding: 24,
+    padding: wp(24),
   },
   passwordLabel: {
-    fontSize: 14,
+    fontSize: fp(14),
     color: "#888888",
-    marginBottom: 8,
-    marginTop: 16,
+    marginBottom: hp(8),
+    marginTop: hp(16),
   },
   passwordInput: {
     backgroundColor: "#1A1A1A",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
-    fontSize: 16,
+    borderRadius: wp(8),
+    paddingHorizontal: wp(16),
+    paddingVertical: hp(14),
+    fontSize: fp(16),
     color: "#FFFFFF",
   },
   passwordInputFocused: {
     borderColor: "#ccc",
-    borderWidth: 1,
+    borderWidth: wp(1),
   },
   saveButton: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 14,
+    borderRadius: wp(8),
+    paddingVertical: hp(14),
     alignItems: "center",
-    marginTop: 32,
+    marginTop: hp(32),
   },
   saveButtonText: {
-    fontSize: 16,
+    fontSize: fp(16),
     fontWeight: "600",
     color: "#000000",
   },
@@ -598,6 +599,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   appsList: {
-    paddingBottom: 20,
+    paddingBottom: hp(20),
   },
 });

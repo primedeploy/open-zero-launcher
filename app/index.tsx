@@ -19,6 +19,7 @@ import {
   isDefaultLauncher,
   openDefaultLauncherSettings,
 } from "../src/services";
+import { hp, wp } from "../src/utils";
 
 const SWIPE_THRESHOLD = 50;
 
@@ -52,10 +53,14 @@ export const HomeScreen = () => {
 
   useEffect(() => {
     async function checkDefaultLauncher() {
+			try {
       const isDefault = await isDefaultLauncher();
       if (!isDefault && !showInitialSetup) {
         setShowDefaultLauncherModal(true);
       }
+			} catch (error) {	
+				console.error("Error checking default launcher:", error);
+			}
     }
 
     checkDefaultLauncher();
@@ -334,20 +339,20 @@ const styles = StyleSheet.create({
   homeContent: {
     flex: 1,
     justifyContent: "center",
-    paddingBottom: 100,
+    paddingBottom: hp(100),
   },
   swipeIndicator: {
     position: "absolute",
-    bottom: 40,
+    bottom: hp(40),
     left: 0,
     right: 0,
     alignItems: "center",
   },
   indicatorLine: {
-    width: 40,
-    height: 4,
+    width: wp(40),
+    height: hp(4),
     backgroundColor: "#333333",
-    borderRadius: 2,
+    borderRadius: wp(2),
   },
 });
 

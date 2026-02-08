@@ -2,8 +2,7 @@
   "expo": {
     "name": "Open Zero Launcher",
     "slug": "open-zero-launcher",
-    "scheme": "open-zero-launcher",
-    "version": "1.0.1'",
+    "version": "25.02.08",
     "plugins": [
       "expo-router",
       "expo-sqlite",
@@ -31,7 +30,7 @@
     "android": {
       "newArchEnabled": true,
       "package": "com.primedeploy.openzerolauncher",
-      "versionCode": 10,
+      "versionCode": 250208,
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/images/icon.png",
         "backgroundColor": "#FFFFFF"
@@ -62,7 +61,7 @@
         "projectId": "ef36e28d-0cd6-4935-9223-d600649f72c4"
       }
     },
-    "runtimeVersion": "1.0.1",
+    "runtimeVersion": "25.02.08",
     "updates": {
       "url": "https://u.expo.dev/ef36e28d-0cd6-4935-9223-d600649f72c4"
     },
